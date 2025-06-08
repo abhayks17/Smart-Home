@@ -207,12 +207,10 @@ const handleScheduleUpdate = async () => {
         status = 'On';
       }
     }
-
     // Step 3: Update the device with autoSchedule
     await axios.patch(`http://localhost:5000/api/devices/${id}`, {
       autoSchedule,
     });
-
     // Step 4: Log status to devicedata table
     await axios.post(`http://localhost:5000/api/devicedata/${id}/data`, {
       status,
